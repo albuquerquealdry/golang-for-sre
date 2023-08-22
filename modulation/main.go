@@ -11,6 +11,14 @@ type Pessoa struct {
 }
 
 func main() {
+	salarios := []int{}
+
+	fmt.Println(salarios)
+	//salario2 := make([]int,5)
+
+
+
+
 	name := modulation()
 	name, coin, location := "Jesus Tricolor", 1000000, "Portugal"
 	fmt.Println(name,coin, location )
@@ -27,3 +35,4 @@ func main() {
 func modulation() string {
 	return "GOLANG FOR SRE"
 }
+
