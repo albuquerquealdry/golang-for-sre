@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 type Pessoa struct {
@@ -11,13 +12,25 @@ type Pessoa struct {
 }
 
 func main() {
+	if len(os.Args) != 2 {
+		os.Exit(1)
+	}
+	n, err := strconv.Atoi(os.Args[1])
+	if err != nil {
+		fmt.Println("Erro numero nao vailido")
+		os.Exit(1)
+	}
+	fmt.Println("numero convertido", n)
+
 	salarios := []int{}
 
 	fmt.Println(salarios)
-	//salario2 := make([]int,5)
+	salFunc := make(map[string]int)
+	salFunc["snowden"] = 100000
+	salFunc["Mitinik"] = 12222
 
-
-
+	sal, exist := salFunc["snowden"]
+	fmt.Println(sal, exist)
 
 	name := modulation()
 	name, coin, location := "Jesus Tricolor", 1000000, "Portugal"
